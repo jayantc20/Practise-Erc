@@ -10,3 +10,21 @@ const gasLimitHex = web3.utils.toHex(3000000);
 
 export default new web3.eth.Contract(PractiseErcAbi, contractAddress);
 export { gasLimitHex, gasPriceHex, web3 };
+
+// const Web3 = require("web3") // import web3 v1.0 constructor
+
+// // use globally injected web3 to find the currentProvider and wrap with web3 v1.0
+// const web3 = () => {
+//   const web3 = new Web3(rpcURL)
+//   return web3
+// }
+
+// // assumes passed-in web3 is v1.0 and creates a function to receive contract name
+// const getContractInstance = (web3) => (contractName) => {
+//   const artifact = artifacts.require(contractName) // globally injected artifacts helper
+//   const deployedAddress = artifact.networks[artifact.network_id].address
+//   const instance = new web3.eth.Contract(artifact.abi, deployedAddress)
+//   return instance
+// }
+
+// module.exports = { getWeb3, getContractInstance }
