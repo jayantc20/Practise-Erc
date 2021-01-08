@@ -1,6 +1,8 @@
-import contract from "../connect.js";
+import { getWeb3, getContractInstance } from "../connect.js";
 import asyncMiddleware from "../middleware/asyncMiddleware.js";
+const web3 = getWeb3();
 
+const contract = getContractInstance(web3);
 const getTotalSupply = asyncMiddleware(async (req, res) => {
   const result = await contract.methods.totalSupply().call();
   console.log(result);
